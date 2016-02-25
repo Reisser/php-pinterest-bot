@@ -86,16 +86,18 @@ class Pins extends Provider
      * Create a pin. Returns created pin ID
      *
      * @param string $imageUrl
-     * @param int    $boardId
+     * @param int $boardId
      * @param string $description
+     * @param string $link
+     *
      * @return bool|int
      */
-    public function create($imageUrl, $boardId, $description = "")
+    public function create($imageUrl, $boardId, $description = "", $link)
     {
         $requestOptions = [
             "method"      => "scraped",
             "description" => $description,
-            "link"        => $imageUrl,
+            "link"        => $link,
             "image_url"   => $imageUrl,
             "board_id"    => $boardId,
         ];
@@ -151,7 +153,9 @@ class Pins extends Provider
         ];
 
         $data = array("options" => $requestOptions);
-        $url = UrlHelper::RESOURCE_PIN_INFO.'?'.Request::createQuery($data);
+        $request = Request::createRequestData($data);
+
+        $url = UrlHelper::RESOURCE_PIN_INFO.'?'.UrlHelper::buildRequestString($request);
         $response = $this->request->exec($url);
 
         return $this->response->checkResponse($response);
