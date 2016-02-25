@@ -1,5 +1,5 @@
 {
-    "name": "seregazhuk/pinterest-bot",
+    "name": "reisser/pinterest-bot",
     "description": "PHP library for Pintrest",
 	"keywords": [
 		"php",
@@ -11,19 +11,19 @@
 	"license": "Mit",
 	"autoload": {
 		"psr-4": {
-            "seregazhuk\\PinterestBot\\": "src"
+            "reisser\\PinterestBot\\": "src"
 		}
 	},
     "autoload-dev": {
         "psr-4": {
-            "seregazhuk\\PinterestBot\\": "src",
-            "seregazhuk\\tests\\": "tests"
+            "reisser\\PinterestBot\\": "src",
+            "reisser\\tests\\": "tests"
         }
     },
 	"repositories": [
 		{
 			"type": "vcs",
-            "url": "git@github.com:seregazhuk/php-pinterest-bot.git"
+            "url": "https://github.com/Reisser/php-pinterest-bot.git"
 		}
 	],
 	"require": {
